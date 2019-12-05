@@ -16,12 +16,10 @@ pool:
   vmImage: 'vs2017-win2016'
 
 variables:
-  major: '3.0.'
-  minor: 0
   devops_buildNumber: $[counter(format('3.0.'), 11000)]
   APPVEYOR_REPO_BRANCH: $[coalesce(variables['System.PullRequest.TargetBranch'], variables['Build.SourceBranchName'])]
   APPVEYOR_REPO_COMMIT: $(Build.SourceVersion)
-  APPVEYOR_BUILD_VERSION: $[counter(variables['major'], 11000)]
+  APPVEYOR_BUILD_VERSION: '3.0.10'
 
 steps:
 - task: PowerShell@2
