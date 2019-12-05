@@ -28,5 +28,6 @@ steps:
 - task: MSBuild@1
   inputs:
     solution: '.\Functions.Templates\Functions.Templates.csproj'
+    msbuildArchitecture: 'x64'
     msbuildVersion: '14.0'
     msbuildArguments: '/p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates'
