@@ -29,4 +29,4 @@ steps:
   inputs:
     solution: '.\Functions.Templates\Functions.Templates.csproj'
     msbuildVersion: '4.0'
-    msbuildArguments: '/p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates'
+    msbuildArguments: '/p:TemplateVersion=3.0.1 /target:PortalTemplatesPkg /target:VisualStudioTemplates'
