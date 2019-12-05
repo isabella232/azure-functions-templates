@@ -21,3 +21,18 @@ variables:
   APPVEYOR_REPO_COMMIT: $(Build.SourceVersion)
 
 steps:
+- task: PowerShell@2
+  inputs:
+    filePath: '.\getTools.ps1'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Set-Location .\Functions.Templates
+          $hasTag = Test-Path env:APPVEYOR_REPO_TAG_NAME
+          if ($hasTag)
+          {
+            msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_REPO_TAG_NAME /target:PortalTemplatesPkg /target:VisualStudioTemplates  
+          } else {
+            msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
+          }
