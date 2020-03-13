@@ -129,7 +129,7 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 # Testing templates
 
 ## Azure Function Core Tools
-1. Once the template files have been added / updated, build the templates using the [Build Steps]()
+1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 2. Locate the built templates at `..\bin\Templates`
 3. Locate the install location of core tools by executing `where func` from command line.
 4. Locate the templates directory typically present here `nodejs\node_modules\azure-functions-core-tools\bin\templates`
@@ -138,7 +138,7 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 7. Select non-dotnet runtime
 
 ## Visual Studio
-1. Once the template files have been added / updated, build the templates using the [Build Steps]()
+1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 2. Make sure all instances of Visual Studio are closed
 2. Open the `LastKnownGood` found at `%userprofile%\AppData\Local\AzureFunctionsTools\Tags\v2`
 3. Note the release version present in the file
@@ -151,7 +151,7 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 1. Trigger extension bundle download
    1. Create a new function app using `func init .`
    2. Start a function app by running `func host start` or `func start`
-2. Once the template files have been added / updated, build the templates using the [Build Steps]()
+2. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 3. Locate the built templates at `..\bin\Templates`
 4. Locate the bundle at `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\`
 5. Replace the contents of the `StaticContent\v1` directory for the bundle you want to test
